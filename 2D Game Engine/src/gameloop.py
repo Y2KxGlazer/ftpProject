@@ -35,7 +35,7 @@ while running:
     
 
     print("circle", circle.px, circle.py)  
-    print(circle.isDrawn)
+    
     print(e1.totalObjs)
 
     pygame.draw.circle(screen, "red", (width/2, height/2), 25)
