@@ -5,13 +5,13 @@ import pathlib
 import pyftpdlib
 
 # User-Defined Imports
-import eventqueue
-import data
+#import eventqueue
+#import data
 from ftpserver import UD_Server
 
 
 # Initialize EventQueue
-events = eventqueue.EventQueue()
+#events = eventqueue.EventQueue()
 
 
 # Initialize Data
@@ -22,9 +22,9 @@ while noFile:
     try:
         if pathlib.Path(path_to_file).is_file():
             with open(path_to_file, "rb") as file:
-                events.appendEvent("File Read in Progress")
+                #events.appendEvent("File Read in Progress")
                 data_bin = data.Data(file)
-                events.appendEvent("Read Success", eventID=123)
+                #events.appendEvent("Read Success", eventID=123)
                 noFile = False
 
                 #print(data_bin.bin_data.read())
@@ -33,13 +33,13 @@ while noFile:
             print("No File Found!")
     except Exception as e:
         print(f"Error: {e}")
-print(events.Event)
-
-# Initialize FTPServer with EventQueue
-n1 = "Clem"
-pw = "1234"
 
 
+# Authorization
+n1 = "Username" # Auth Username, 
+pw = "ThePassword" # Auth Password
+
+# Server Initialization
 server = UD_Server()
 server.add_user(n1, pw)
 server.ftp_start()
