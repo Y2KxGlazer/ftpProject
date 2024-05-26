@@ -36,8 +36,8 @@ while noFile:
 
 
 # Authorization
-n1 = "Username" # Auth Username, 
-pw = "ThePassword" # Auth Password
+n1 = "Username" # On connect, Auth Username change if wanted.
+pw = "ThePassword" # On connect, Auth Password change if wanted.
 
 # Server Initialization
 server = UD_Server()
